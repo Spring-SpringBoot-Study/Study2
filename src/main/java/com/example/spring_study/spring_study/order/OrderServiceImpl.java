@@ -1,15 +1,18 @@
 package com.example.spring_study.spring_study.order;
 
 import com.example.spring_study.spring_study.discount.DiscountPolicy;
-import com.example.spring_study.spring_study.discount.FixDiscountPolicy;
 import com.example.spring_study.spring_study.member.Member;
 import com.example.spring_study.spring_study.member.MemberRepository;
-import com.example.spring_study.spring_study.member.MemoryMemberRepository;
 
-public class OrderServiceImpl implements OrderSevice{
+public class OrderServiceImpl implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

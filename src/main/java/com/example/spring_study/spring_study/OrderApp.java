@@ -10,8 +10,9 @@ import com.example.spring_study.spring_study.order.OrderService;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService(); // MemberService memberService = new MemberServiceImpl()을 대체
+        OrderService orderService = appConfig.orderService(); // OrderService orderService = new OrderServiceImpl()을 대체
 
         Long memberId = 1L;
         Member member = new Member(memberId,"memberA", Grade.VIP);
