@@ -6,12 +6,12 @@ import com.example.spring_study.spring_study.member.MemberService;
 import com.example.spring_study.spring_study.member.MemberServiceImpl;
 import com.example.spring_study.spring_study.order.Order;
 import com.example.spring_study.spring_study.order.OrderServiceImpl;
-import com.example.spring_study.spring_study.order.OrderSevice;
+import com.example.spring_study.spring_study.order.OrderService;
 
 public class OrderApp {
     public static void main(String[] args) {
         MemberService memberService = new MemberServiceImpl();
-        OrderSevice orderService = new OrderServiceImpl();
+        OrderService orderService = new OrderServiceImpl();
 
         Long memberId = 1L;
         Member member = new Member(memberId,"memberA", Grade.VIP);
