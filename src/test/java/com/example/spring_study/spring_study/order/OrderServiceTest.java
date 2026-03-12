@@ -4,7 +4,6 @@ import com.example.spring_study.spring_study.AppConfig;
 import com.example.spring_study.spring_study.member.Grade;
 import com.example.spring_study.spring_study.member.Member;
 import com.example.spring_study.spring_study.member.MemberService;
-import com.example.spring_study.spring_study.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

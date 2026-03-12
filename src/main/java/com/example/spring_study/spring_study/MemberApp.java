@@ -3,7 +3,6 @@ package com.example.spring_study.spring_study;
 import com.example.spring_study.spring_study.member.Grade;
 import com.example.spring_study.spring_study.member.Member;
 import com.example.spring_study.spring_study.member.MemberService;
-import com.example.spring_study.spring_study.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
