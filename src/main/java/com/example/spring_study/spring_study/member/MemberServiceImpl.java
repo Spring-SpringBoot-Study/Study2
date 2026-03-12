@@ -1,6 +1,6 @@
 package com.example.spring_study.spring_study.member;
 
-public class MemberSeviceImpl implements MemberSevice{
+public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
 

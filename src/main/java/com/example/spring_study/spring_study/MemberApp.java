@@ -2,12 +2,12 @@ package com.example.spring_study.spring_study;
 
 import com.example.spring_study.spring_study.member.Grade;
 import com.example.spring_study.spring_study.member.Member;
-import com.example.spring_study.spring_study.member.MemberSevice;
-import com.example.spring_study.spring_study.member.MemberSeviceImpl;
+import com.example.spring_study.spring_study.member.MemberService;
+import com.example.spring_study.spring_study.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberSevice memberSevice = new MemberSeviceImpl();
+        MemberService memberSevice = new MemberServiceImpl();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberSevice.join(member);
 

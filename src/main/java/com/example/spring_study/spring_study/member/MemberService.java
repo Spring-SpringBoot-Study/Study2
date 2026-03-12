@@ -1,6 +1,6 @@
 package com.example.spring_study.spring_study.member;
 
-public interface MemberSevice {
+public interface MemberService {
 
     void join(Member member);
 
