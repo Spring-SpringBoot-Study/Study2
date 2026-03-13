@@ -33,4 +33,17 @@ public class ConfigurationSingletonTest {
         assertThat(memberService.getMemberRepository()).isSameAs(memberRepository);
         assertThat(memberRepository).isSameAs(memberRepository1);
     }
+
+    @Test
+    void configurationDeep() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        //AppConfig도 스프링 빈으로 등록된다.
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        // bean.getClass() = class com.example.spring_study.AppConfig$$SpringCGLIB$$0
+        // 이건 AppConfig에서 @Configuration 이 붙어 있기 때문에, CGLIB 객체를 만들어서 넣어줌으로서 항상 싱글톤을 보장하는 것
+        // @Configuration이 빠지면, bean.getClass() = class com.example.spring_study.AppConfig 이런식으로 나옴 -> 싱클톤이 깨짐
+        System.out.println("bean.getClass() = " + bean.getClass());
+    }
 }
