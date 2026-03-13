@@ -1,8 +1,0 @@
-package com.example.spring_study.spring_study.member;
-
-public interface MemberService {
-
-    void join(Member member);
-
-    Member findMember(Long memberId);
-}
