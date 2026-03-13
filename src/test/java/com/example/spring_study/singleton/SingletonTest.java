@@ -31,4 +31,20 @@ public class SingletonTest {
 
         // 이렇게 호출할 때마다 객체를 생성하는 문제를 해결하기 위해서 객체를 1개만 생성하는 Singleton 방식을 사용
     }
+
+    @Test
+    @DisplayName("싱글톤 패턴을 적용한 객체 사용")
+    void singletonServiceTest(){
+        // new SingletonService(); // -> private이기 때문에 이 방식으로 싱글톤 객체 생성 시도를 막음
+        SingletonService singletonService1 = SingletonService.getInstance();
+        SingletonService singletonService2 = SingletonService.getInstance();
+
+        // 참조값이 같은 것을 확인
+        System.out.println("singletonService1 = " + singletonService1);
+        System.out.println("singletonService2 = " + singletonService2);
+
+        assertThat(singletonService1).isSameAs(singletonService2);
+        // same -> 인스턴스가 같은지
+        // equal = 내용이 같은지
+    }
 }
