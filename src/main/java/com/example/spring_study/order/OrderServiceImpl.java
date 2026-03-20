@@ -12,6 +12,8 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
+    // 생성자 주입 방식을 사용하면, final 키워드를 사용할 수 있다.
+    // final은 선언 직후에 바로 초기화가 이루어져야하므로, 개발자가 실수 생성자 코드 미작성 시에 컴파일 오류로 식별 가능
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
