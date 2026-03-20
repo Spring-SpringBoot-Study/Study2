@@ -1,5 +1,6 @@
 package com.example.spring_study.order;
 
+import com.example.spring_study.annotation.MainDiscountPolicy;
 import com.example.spring_study.discount.DiscountPolicy;
 import com.example.spring_study.member.Member;
 import com.example.spring_study.member.MemberRepository;
@@ -16,6 +17,9 @@ public class OrderServiceImpl implements OrderService {
 
     // @Qualifier("mainDiscountPolicy")
     // 이처럼 Lombock에서도 @Qualifier 사용 가능(main/java/lombok.config에서 설정 추가 필요)
+
+    @MainDiscountPolicy
+    // @Qualifier("mainDiscountPolicy") 대신 @MainDiscountPolicy 사용
     private final DiscountPolicy discountPolicy;
 
     // 생성자 주입 방식을 사용하면, final 키워드를 사용할 수 있다.
