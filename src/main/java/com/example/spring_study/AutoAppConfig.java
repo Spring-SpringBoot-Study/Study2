@@ -27,9 +27,9 @@ public class AutoAppConfig {
     // 자동 vs 자동, 즉 componentScan끼리의 충돌(Bean의 이름이 같음)은 에러가 남
     // 수동 vs 자동의 경우, 수동이 우선권을 가짐(수동 Bean이 자동 Bean을 오버라이딩함) -> 에러가 안남
     // 최근 Spring Boot에서는 오류가 나도록 바뀜(properties에서 설정으로 오버라이딩되게 변경 가능)
-    @Bean(name = "memoryMemberRepository")
-    MemoryMemberRepository memoryMemberRepository() {
-        return new MemoryMemberRepository();
-    }
+//    @Bean(name = "memoryMemberRepository")
+//    MemoryMemberRepository memoryMemberRepository() {
+//        return new MemoryMemberRepository();
+//    }
 
 }
