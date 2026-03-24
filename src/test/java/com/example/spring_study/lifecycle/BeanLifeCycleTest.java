@@ -1,7 +1,6 @@
 package com.example.spring_study.lifecycle;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -13,12 +12,13 @@ public class BeanLifeCycleTest {
     public void lifeCycleTest() {
         ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
         NetworkClient client = ac.getBean(NetworkClient.class);
-        ac.close();
+        ac.close(); // 컨테이너가 종료되면서, afterPropertiesSet()가 호출됨
     }
 
     @Configuration
     static class LifeCycleConfig {
-        @Bean
+
+        @Bean // Bean이 완전히 등록된 후에 afterPropertiesSet()이 호출됨
         public NetworkClient networkClient() {
             // 객체의 생성과 초기화는 분리하는 것이 좋다
             // 생성자는 필수 정보(파라미터)를 받고, 메모를 할당해서 객체를 생성하는 책임을 가짐
