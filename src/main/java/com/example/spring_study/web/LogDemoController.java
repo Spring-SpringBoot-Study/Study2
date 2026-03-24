@@ -3,7 +3,6 @@ package com.example.spring_study.web;
 import com.example.spring_study.commom.MyLogger;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,6 +21,7 @@ public class LogDemoController {
 
         String requestURL = request.getRequestURL().toString();
         // MyLogger myLogger = myLoggerProvider.getObject(); // 이 시점에 myLogger가 생성됨 - request 스코프 이므로 HTTP 요청 하나가 들어올 때 딱 한 번 생성됨
+        System.out.println("myLogger = " + myLogger.getClass());
         myLogger.setRequestURL(requestURL);
 
         myLogger.log("controller test");
